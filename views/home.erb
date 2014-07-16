@@ -1,0 +1,35 @@
+<% if !session[:user_id] %>
+  <section class="clearfix">
+    <article class="full_column">
+
+      <% if flash[:register_notice] %>
+        <%= flash[:register_notice] %>
+      <% end %>
+
+      <a href="/register/">Register</a><br>
+      <form action="/login/" method="post">
+        <label for="username">Username:</label><br>
+        <input name="username" id="username" type="text"><br>
+        <label for="password">Password:</label><br>
+        <input name="password" id="password" type="password"><br>
+        <button type="submit">Log In</button>
+      </form>
+    </article>
+  </section>
+
+<% else %>
+
+  <section class="clearfix">
+    <article class="one_half">
+      <h1>Welcome, <%= username %>!</h1>
+    </article>
+  </section>
+
+  <section class="clearfix">
+    <article id="right_float" class="full_column">
+      <a href="/logout/">Logout</a><br>
+    </article>
+  </section>
+
+
+<% end %>
