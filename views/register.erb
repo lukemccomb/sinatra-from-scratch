@@ -1,0 +1,10 @@
+<% if flash[:login_fail] %>
+  <%= flash[:login_fail] %>
+<% end %>
+<form action="/register/" method="post">
+  <label for="username">Username:</label><br>
+  <input name="username" id="username" type="text"><br>
+  <label for="password">Password:</label><br>
+  <input name="password" id="password" type="text"><br>
+  <button type="submit">Submit</button>
+</form>

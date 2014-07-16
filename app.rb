@@ -25,11 +25,11 @@ class App < Sinatra::Application
     elsif params[:sort] == "desc"
       @user_arr.sort! {|x,y| y <=> x }
     end
-    erb :root, :locals => {:username => @username, :user_arr => @user_arr, :fish_arr => @fish_arr}, :layout => :main_layout
+    erb :home, :locals => {:username => @username, :user_arr => @user_arr}, :layout => :layout
   end
 
   get "/register/" do
-    erb :register, :layout => :main_layout
+    erb :register, :layout => :layout
   end
 
   post "/delete/" do
